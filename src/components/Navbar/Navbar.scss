@@ -11,6 +11,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 10;
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 64px;
+  }
 }
 
 .app__navbar-logo {
