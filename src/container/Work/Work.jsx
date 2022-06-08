@@ -1,82 +1,27 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Project } from '../../components/index';
-import images from '../../constants/images';
 import { AppWrap } from '../../wrapper';
 import './Work.scss';
-
-const works = [
-  {
-    name: 'OpenEMT: Madrid Bus App',
-    description:
-      'An app to check bus times for Madrid buses, made with Flutter.',
-    img: images.open_emt,
-    repoUrl: 'https://github.com/p3isman/open_emt',
-    projectUrl:
-      'https://play.google.com/store/apps/details?id=com.magusstudio.open_emt',
-    tags: ['mobile']
-  },
-  {
-    name: 'Find The Spy',
-    description: 'A multiplayer game app for one device built with Flutter.',
-    img: images.find_the_spy,
-    projectUrl:
-      'https://play.google.com/store/apps/details?id=com.magusstudio.find_the_spy_pro',
-    tags: ['mobile']
-  },
-  {
-    name: 'Quotia: Inspirational Quotes',
-    description: 'A mobile app to check a new inspirational quote each day.',
-    img: images.quotia,
-    projectUrl:
-      'https://play.google.com/store/apps/details?id=com.magusstudio.quotia_pro',
-    tags: ['mobile']
-  },
-  {
-    name: 'Minimal Reddit',
-    description: 'A minimal Reddit client to consume the main subreddits.',
-    img: images.minimal_reddit,
-    repoUrl: 'https://github.com/p3isman/reddit_client',
-    tags: ['web']
-  },
-  {
-    name: 'QR Scanner',
-    description: 'A simple QR Scanner with URL launcher made with Flutter.',
-    img: images.qr_scanner,
-    repoUrl: 'https://github.com/p3isman/qr_scanner',
-    tags: ['mobile']
-  },
-  {
-    name: 'Personal Portfolio',
-    description: 'My personal Portfolio. This one!',
-    img: images.portfolio,
-    repoUrl: 'https://github.com/p3isman/personal_portfolio',
-    tags: ['web']
-  },
-  {
-    name: 'Administrador de Pacientes',
-    description:
-      'A simple React app to manage pacient appointments for a doctor.',
-    img: images.admin_pacientes,
-    repoUrl: 'https://github.com/p3isman/admin_pacientes',
-    tags: ['web']
-  },
-  {
-    name: 'Movies App',
-    description: 'An app to check the newest movies in theaters.',
-    img: images.movies,
-    repoUrl: 'https://github.com/p3isman/movies_app',
-    tags: ['mobile']
-  }
-];
+import { client } from '../../client';
 
 const Work = () => {
+  const [works, setWorks] = useState([]);
+  const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
-  const [filterWork, setFilterWork] = useState(works);
   const [animateCard, setAnimateCard] = useState({
     y: [100, 0],
     opacity: [0, 1]
   });
+
+  useEffect(() => {
+    const query = '*[_type=="works"]';
+
+    client.fetch(query).then(data => {
+      setWorks(data);
+      setFilterWork(data);
+    });
+  }, []);
 
   const handleWorkFilter = filter => {
     setActiveFilter(filter);
@@ -120,7 +65,7 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}>
         {filterWork.map(work => (
-          <Project key={work.name} work={work} />
+          <Project key={work.title} work={work} />
         ))}
       </motion.div>
     </div>
