@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .app__work {
   flex: 1;
   width: 100%;
@@ -43,8 +45,9 @@
 
   .app__work-item {
     width: 270px;
-    height: 380px;
+    height: 480px;
     flex-direction: column;
+    justify-content: flex-start;
     margin: 2rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -121,6 +124,19 @@
   }
 
   p {
+    text-align: center;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 1.5rem;
+  }
+
+  .tech-stack {
+    @extend .p-text;
+    margin-top: 1rem;
     text-align: center;
   }
 }

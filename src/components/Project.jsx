@@ -2,13 +2,14 @@ import { motion } from 'framer-motion';
 import { BsGithub } from 'react-icons/bs';
 import { FcSearch } from 'react-icons/fc';
 import { urlFor } from '../client';
+import '../container/Work/Work.scss';
 
 const Project = props => {
   return (
     <motion.div className='app__work-item app__flex'>
       <div className='app__work-img app__flex'>
         <img src={urlFor(props.work.imgUrl)} alt={props.work.name} />
-        <motion.div
+        {/* <motion.div
           whileHover={{
             opacity: [0, 1]
           }}
@@ -46,7 +47,7 @@ const Project = props => {
               </motion.div>
             </a>
           )}
-        </motion.div>
+        </motion.div> */}
       </div>
       <div className='app__work-content app__flex'>
         <h4 className='bold-text'>{props.work.title}</h4>
@@ -57,6 +58,21 @@ const Project = props => {
           }}>
           {props.work.description}
         </p>
+        <p className='tech-stack'>
+          Tech Stack: {props.work.techStack.join(', ')}
+        </p>
+        <div className='project-links'>
+          {props.work.codeLink && (
+            <a href={props.work.codeLink} target='_blank' rel='noreferrer'>
+              <BsGithub color='#171515' size={20} />
+            </a>
+          )}
+          {props.work.projectLink && (
+            <a href={props.work.projectLink} target='_blank' rel='noreferrer'>
+              <FcSearch size={20} />
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
