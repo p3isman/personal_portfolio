@@ -58,7 +58,7 @@ const Project = props => {
           }}>
           {props.work.description}
         </p>
-        <p className='tech-stack'>
+        <p className='p-text tech-stack'>
           Tech Stack: {props.work.techStack.join(', ')}
         </p>
         <div className='project-links'>
