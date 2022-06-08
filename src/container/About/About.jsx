@@ -26,6 +26,15 @@ const About = () => {
         <span> Good Design</span>
       </h2>
 
+      <p className='about-p'>
+        Hello and welcome to my portfolio. I am Pedro, a software developer with
+        a focus on web and mobile technologies, primarily front-end. I really
+        enjoy building applications and going from an idea to production. I am
+        specialized in working with React for the web and Flutter for mobile
+        apps. Coming from a background in video producing and video editing, I
+        understand the importance of a good presentation and good design.
+      </p>
+
       <div className='app__profiles'>
         {abouts.map((about, index) => (
           <motion.div
