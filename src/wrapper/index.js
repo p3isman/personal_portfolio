@@ -1,1 +1,2 @@
-export { default as AppWrap } from './AppWrap';
+export { default as SectionWrap } from './SectionWrap';
+export { default as AppWrapper } from './AppWrapper';
