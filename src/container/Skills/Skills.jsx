@@ -31,10 +31,6 @@ const skills = [
     icon: images.node
   },
   {
-    name: 'Express',
-    icon: images.express
-  },
-  {
     name: 'Flutter',
     icon: images.flutter
   },
