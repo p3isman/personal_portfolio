@@ -80,6 +80,10 @@
       &:hover {
         box-shadow: 0 0 25px var(--primary-color);
       }
+
+      &:focus {
+        box-shadow: 0 0 5px var(--secondary-color);
+      }
     }
 
     textarea {
