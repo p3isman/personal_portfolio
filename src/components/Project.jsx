@@ -64,12 +64,12 @@ const Project = props => {
         <div className='project-links'>
           {props.work.codeLink && (
             <a href={props.work.codeLink} target='_blank' rel='noreferrer'>
-              <BsGithub color='#171515' size={20} />
+              <BsGithub color='#171515' size={25} />
             </a>
           )}
           {props.work.projectLink && (
             <a href={props.work.projectLink} target='_blank' rel='noreferrer'>
-              <FcSearch size={20} />
+              <FcSearch size={25} />
             </a>
           )}
         </div>
