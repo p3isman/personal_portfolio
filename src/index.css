@@ -1,13 +1,33 @@
-:root {
+.theme-light {
   --font-base: 'DM Sans', sans-serif;
-
   --primary-color: #edf2f8;
   --secondary-color: #313bac;
-  --black-color: #030303;
+  --text-color: #030303;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
   --brown-color: #46364a;
-  --white-color: #ffffff;
+  --bg-color: #ffffff;
+  --shadow: #ddd;
+  --card-bg-first: #fef4f5;
+  --card-bg-last: #f2f7fb;
+  --input-color: rgba(228, 228, 228, 0.404);
+}
+
+.theme-dark {
+  --font-base: 'DM Sans', sans-serif;
+  --primary-color: #26262777;
+  --secondary-color: #313bac;
+  --text-color: #fff;
+  --lightGray-color: #2d2647;
+  --gray-color: #9ca3af;
+  --brown-color: #46364a;
+  --bg-color: rgb(22, 31, 44);
+  --shadow: rgba(18, 18, 29, 0.397);
+  --card-bg-first: #1c1b2e7e;
+  --card-bg-last: #1f212e59;
+  --input-color: rgb(22, 31, 44);
+
+  background-color: rgba(18, 25, 35, 1);
 }
 
 * {
@@ -15,4 +35,7 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+  transition-property: color, background-color, border, box-shadow;
+  transition-duration: 1s;
 }

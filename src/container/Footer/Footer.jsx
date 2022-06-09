@@ -17,7 +17,7 @@ const Footer = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const { inputRef } = useContext(AppContext);
+  const { inputRef, theme } = useContext(AppContext);
 
   const handleChangeInput = e => {
     const { name, value } = e.target;
@@ -146,7 +146,7 @@ const Footer = () => {
 
       <div className='app__footer-social'>
         <a href='https://github.com/p3isman/' target='_blank' rel='noreferrer'>
-          <BsGithub size={30} color={'#171515'} />
+          <BsGithub size={30} color={theme === 'dark' ? 'white' : '#171515'} />
         </a>
         <a
           href='https://www.linkedin.com/in/pedroeisman/'

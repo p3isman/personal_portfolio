@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Twirl as Hamburger } from 'hamburger-react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   AiFillBuild,
   AiFillContacts,
@@ -8,6 +8,9 @@ import {
   AiFillInfoCircle,
   AiFillProject
 } from 'react-icons/ai';
+import { HiMoon } from 'react-icons/hi';
+import { CgSun } from 'react-icons/cg';
+import { AppContext } from '../../context/AppContextProvider';
 import './Navbar.scss';
 
 const sections = [
@@ -35,19 +38,39 @@ const sections = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { inputRef, theme, onChangeTheme } = useContext(AppContext);
+
+  const focusInput = item => {
+    if (item === 'contact') {
+      setTimeout(() => {
+        inputRef.current.focus();
+      }, 0);
+    }
+  };
 
   return (
     <>
-      <nav className='app__navbar'>
+      <nav
+        className={`app__navbar ${theme === 'dark' ? 'app__navbar-dark' : ''}`}>
         {/* Desktop menu */}
         <div className='app__navbar-logo'>{/* TODO: logo */}</div>
         <ul className='app__navbar-links'>
           {['home', 'about', 'work', 'skills', 'contact'].map(item => (
-            <li className='app__flex p-text' key={`link-${item}`}>
+            <li
+              className='app__flex p-text'
+              key={`link-${item}`}
+              onClick={() => focusInput(item)}>
               <a href={`#${item}`}>{item}</a>
             </li>
           ))}
         </ul>
+        <div className='app__navbar-theme' onClick={onChangeTheme}>
+          {theme === 'dark' ? (
+            <HiMoon color='white' size={25} />
+          ) : (
+            <CgSun color='black' size={25} />
+          )}
+        </div>
 
         {/* Mobile menu */}
         <div className='app__navbar-mobile'>
@@ -57,7 +80,11 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className='app__navbar-mobile-menu'
+            className={`app__navbar-mobile-menu ${
+              theme === 'dark'
+                ? 'app__navbar-mobile-dark'
+                : 'app__navbar-mobile-light'
+            }`}
             transition={{ duration: 1, ease: 'easeOut' }}
             initial={{ y: -300, opacity: 0.5 }}
             animate={{ y: 0, opacity: 1 }}

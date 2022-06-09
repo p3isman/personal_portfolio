@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FcSearch } from 'react-icons/fc';
 import { urlFor } from '../client';
 import '../container/Work/Work.scss';
+import { AppContext } from '../context/AppContextProvider';
 
 const Project = props => {
+  const { theme } = useContext(AppContext);
+
   return (
     <motion.div className='app__work-item app__flex'>
       <div className='app__work-img app__flex'>
@@ -64,7 +68,10 @@ const Project = props => {
         <div className='project-links'>
           {props.work.codeLink && (
             <a href={props.work.codeLink} target='_blank' rel='noreferrer'>
-              <BsGithub color='#171515' size={25} />
+              <BsGithub
+                color={theme === 'dark' ? 'white' : '#171515'}
+                size={25}
+              />
             </a>
           )}
           {props.work.projectLink && (

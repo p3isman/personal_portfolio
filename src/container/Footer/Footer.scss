@@ -20,7 +20,6 @@
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
-    background-color: #fef4f5;
 
     img {
       width: 40px;
@@ -50,8 +49,11 @@
   }
 }
 
+.app__footer-cards .app__footer-card:first-child {
+  background-color: var(--card-bg-first);
+}
 .app__footer-cards .app__footer-card:last-child {
-  background-color: #f2f7fb;
+  background-color: var(--card-bg-last);
 }
 
 .app__footer-form {
@@ -71,7 +73,7 @@
       padding: 0.95rem;
       border: none;
       border-radius: 7px;
-      background-color: var(--primary-color);
+      background-color: var(--input-color);
       font-family: var(--font-base);
       outline: none;
       resize: vertical;
@@ -104,7 +106,7 @@
     background-color: var(--secondary-color);
     font-weight: 500;
     font-family: var(--font-base);
-    color: var(--white-color);
+    color: whitesmoke;
     cursor: pointer;
     transition: all 0.3s;
 

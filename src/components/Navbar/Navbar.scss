@@ -18,7 +18,19 @@
 
   @media screen and (max-width: 900px) {
     height: 64px;
+    justify-content: flex-end;
   }
+}
+
+.app__navbar-dark {
+  background-color: rgba(21, 29, 41, 0.8);
+  border: 1px solid rgba(54, 54, 54, 0.2);
+}
+
+.app__navbar-theme {
+  position: relative;
+  top: 3px;
+  margin-right: 2rem;
 }
 
 .app__navbar-logo {
@@ -106,8 +118,7 @@
   align-items: flex-end;
   flex-direction: column;
 
-  background: url('../../assets/bgWhite.webp');
-  background-color: var(--white-color);
+  background-color: var(--bg-color);
   background-size: cover;
   background-repeat: repeat;
 
@@ -160,4 +171,11 @@
   @media screen and (min-width: 900px) {
     display: none;
   }
+}
+
+.app__navbar-mobile-light {
+  background: url('../../assets/bgIMG-light.webp');
+}
+.app__navbar-mobile-dark {
+  background: url('../../assets/bgIMG-dark.webp');
 }
