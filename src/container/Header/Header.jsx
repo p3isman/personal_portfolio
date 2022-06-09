@@ -65,7 +65,7 @@ const Header = () => {
         {/* Circles */}
         <motion.div
           variants={variants}
-          whileInView='scaleVariant'
+          animate='scaleVariant'
           className='app__header-circles'>
           {circles.map((circle, index) => (
             <div className='app__flex' key={`circle-${index}`}>
