@@ -13,7 +13,7 @@ const AppContextProvider = ({ children }) => {
   const onChangeTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme', newTheme);
   };
 
   const contextValue = {
