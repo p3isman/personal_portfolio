@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import images from '../../constants/images';
-import { AppWrap } from '../../wrapper';
+import { SectionWrap } from '../../wrapper';
 import './Header.scss';
 
 const variants = {
@@ -78,4 +78,4 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, 'home');
+export default SectionWrap(Header, 'home');

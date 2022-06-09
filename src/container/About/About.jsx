@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import images from '../../constants/images';
-import { AppWrap } from '../../wrapper';
+import { SectionWrap } from '../../wrapper';
 import './About.scss';
 
 const abouts = [
@@ -57,4 +57,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, 'about');
+export default SectionWrap(About, 'about');

@@ -1,9 +1,10 @@
 import emailjs from '@emailjs/browser';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { SpinnerCircular } from 'spinners-react';
 import images from '../../constants/images';
-import { AppWrap } from '../../wrapper';
+import { AppContext } from '../../context/AppContextProvider';
+import { SectionWrap } from '../../wrapper';
 import './Footer.scss';
 
 const Footer = () => {
@@ -15,6 +16,8 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const { inputRef } = useContext(AppContext);
 
   const handleChangeInput = e => {
     const { name, value } = e.target;
@@ -93,6 +96,7 @@ const Footer = () => {
         <form className='app__footer-form app__flex' onSubmit={handleSubmit}>
           <div className='app__flex'>
             <input
+              ref={inputRef}
               className='p-text'
               type='text'
               placeholder='Your Name'
@@ -162,4 +166,4 @@ const Footer = () => {
   );
 };
 
-export default AppWrap(Footer, 'contact');
+export default SectionWrap(Footer, 'contact');

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { Project } from '../../components/index';
-import { AppWrap } from '../../wrapper';
+import { SectionWrap } from '../../wrapper';
 import './Work.scss';
 import { client } from '../../client';
 
@@ -72,4 +72,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, 'work');
+export default SectionWrap(Work, 'work');

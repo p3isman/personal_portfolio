@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import images from '../../constants/images';
-import { AppWrap } from '../../wrapper';
+import { SectionWrap } from '../../wrapper';
 import './Skills.scss';
 
 const skills = [
@@ -80,4 +80,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(Skills, 'skills');
+export default SectionWrap(Skills, 'skills');
