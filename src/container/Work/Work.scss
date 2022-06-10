@@ -21,9 +21,10 @@
     background-color: white;
     color: black;
     font-weight: 800;
-    cursor: pointer;
     transition: all 0.3s ease;
     margin: 0.5rem;
+    border: none;
+    font-family: var(--font-base);
 
     &:hover {
       background-color: var(--secondary-color);
@@ -105,7 +106,6 @@
     color: white;
     margin: 1rem;
     font-family: var(--font-base);
-    cursor: pointer;
     transition: all 0.3s ease;
 
     svg {

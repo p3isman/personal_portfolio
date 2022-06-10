@@ -49,14 +49,14 @@ const Work = () => {
       </h2>
       <div className='app__work-filter'>
         {['All', 'Web App', 'Mobile App'].map((item, index) => (
-          <div
+          <button
             key={index}
             onClick={() => handleWorkFilter(item)}
             className={`app__work-filter-item app__flex p-text ${
               activeFilter === item ? 'item-active' : ''
             }`}>
             {item}
-          </div>
+          </button>
         ))}
       </div>
 
