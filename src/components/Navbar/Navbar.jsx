@@ -92,7 +92,12 @@ const Navbar = () => {
             <ul>
               {sections.map(section => (
                 <li key={section.name}>
-                  <a href={`#${section.name}`} onClick={() => setOpen(false)}>
+                  <a
+                    href={`#${section.name}`}
+                    onClick={() => {
+                      setOpen(false);
+                      focusInput(section.name);
+                    }}>
                     <div>{section.icon}</div>
                     <div>{section.name}</div>
                   </a>
