@@ -1,5 +1,8 @@
-.theme-light {
+:root {
   --font-base: 'DM Sans', sans-serif;
+}
+
+.theme-light {
   --primary-color: #edf2f8;
   --secondary-color: #313bac;
   --text-color: #030303;
@@ -14,7 +17,6 @@
 }
 
 .theme-dark {
-  --font-base: 'DM Sans', sans-serif;
   --primary-color: #26262777;
   --secondary-color: #313bac;
   --text-color: #fff;
