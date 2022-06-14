@@ -1,6 +1,7 @@
 :root {
   --font-base: 'DM Sans', sans-serif;
   --secondary-color: #313bac;
+  --button-hover: #242b7c;
 }
 
 .theme-light {
