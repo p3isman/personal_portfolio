@@ -66,9 +66,9 @@ const Navbar = () => {
         </ul>
         <div className='app__navbar-theme' onClick={onChangeTheme}>
           {theme === 'dark' ? (
-            <HiMoon color='white' size={25} />
+            <CgSun color='white' size={25} />
           ) : (
-            <CgSun color='black' size={25} />
+            <HiMoon color='white' size={25} />
           )}
         </div>
 
