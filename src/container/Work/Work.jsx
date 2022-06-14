@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Project } from '../../components/index';
 import { SectionWrap } from '../../wrapper';
 import './Work.scss';
-import { client } from '../../client';
+import { fetchWorks } from '../../api/Work';
 
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -15,9 +15,7 @@ const Work = () => {
   });
 
   useEffect(() => {
-    const query = '*[_type=="works"] | order(order asc)';
-
-    client.fetch(query).then(data => {
+    fetchWorks().then(data => {
       setWorks(data);
       setFilterWork(data);
     });

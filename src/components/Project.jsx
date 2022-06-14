@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FcSearch } from 'react-icons/fc';
-import { urlFor } from '../client';
+import { urlFor } from '../api/sanityClient';
 import '../container/Work/Work.scss';
 import { AppContext } from '../context/AppContextProvider';
 
