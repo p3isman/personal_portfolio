@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import images from '../../constants/images';
-import { SectionWrap } from '../../wrapper';
-import './About.scss';
+import { motion } from 'framer-motion'
+import images from '../../constants/images'
+import { SectionWrap } from '../../wrapper'
+import './About.scss'
 
 const abouts = [
   {
@@ -16,7 +15,7 @@ const abouts = [
     description: 'I like giving birth to my ideas by making mobile apps.',
     imgUrl: images.mobile_dev
   }
-];
+]
 
 const About = () => {
   return (
@@ -54,7 +53,7 @@ const About = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SectionWrap(About, 'about');
+export default SectionWrap(About, 'about')

@@ -1,44 +1,44 @@
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { Project } from '../../components/index';
-import { SectionWrap } from '../../wrapper';
-import './Work.scss';
-import { fetchWorks } from '../../api/Work';
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { Project } from '../../components/index'
+import { SectionWrap } from '../../wrapper'
+import './Work.scss'
+import { fetchWorks } from '../../api/Work'
 
 const Work = () => {
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [works, setWorks] = useState([])
+  const [filterWork, setFilterWork] = useState([])
+  const [activeFilter, setActiveFilter] = useState('All')
   const [animateCard, setAnimateCard] = useState({
     y: [100, 0],
     opacity: [0, 1]
-  });
+  })
 
   useEffect(() => {
     fetchWorks().then(data => {
-      setWorks(data);
-      setFilterWork(data);
-    });
-  }, []);
+      setWorks(data)
+      setFilterWork(data)
+    })
+  }, [])
 
   const handleWorkFilter = filter => {
-    setActiveFilter(filter);
-    setAnimateCard({ y: 100, opacity: 0 });
+    setActiveFilter(filter)
+    setAnimateCard({ y: 100, opacity: 0 })
 
     setTimeout(() => {
-      setAnimateCard({ y: 0, opacity: 1 });
+      setAnimateCard({ y: 0, opacity: 1 })
 
       if (filter === 'All') {
-        setFilterWork(works);
+        setFilterWork(works)
       } else {
         setFilterWork(
           works.filter(work =>
             work.tags.includes(filter.split(' ')[0].toLowerCase())
           )
-        );
+        )
       }
-    }, 500);
-  };
+    }, 500)
+  }
 
   return (
     <div className='app__work'>
@@ -67,7 +67,7 @@ const Work = () => {
         ))}
       </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default SectionWrap(Work, 'work');
+export default SectionWrap(Work, 'work')

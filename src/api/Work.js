@@ -1,8 +1,8 @@
-import { client } from '../api/sanityClient';
+import { client } from '../api/sanityClient'
 
 export const fetchWorks = async () => {
-  const query = '*[_type=="works"] | order(order asc)';
+  const query = '*[_type=="works"] | order(order asc)'
 
-  const data = await client.fetch(query);
-  return data;
-};
+  const data = await client.fetch(query)
+  return data
+}

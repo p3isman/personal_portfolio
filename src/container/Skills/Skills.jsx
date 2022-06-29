@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
-import React from 'react';
-import images from '../../constants/images';
-import { SectionWrap } from '../../wrapper';
-import './Skills.scss';
+import { motion } from 'framer-motion'
+import images from '../../constants/images'
+import { SectionWrap } from '../../wrapper'
+import './Skills.scss'
 
 const skills = [
   {
@@ -46,7 +45,7 @@ const skills = [
     name: 'Git',
     icon: images.git
   }
-];
+]
 
 const Skills = () => {
   return (
@@ -73,7 +72,7 @@ const Skills = () => {
         </motion.div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SectionWrap(Skills, 'skills');
+export default SectionWrap(Skills, 'skills')

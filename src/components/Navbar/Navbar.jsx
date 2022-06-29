@@ -1,17 +1,17 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { Twirl as Hamburger } from 'hamburger-react';
-import React, { useContext, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion'
+import { Twirl as Hamburger } from 'hamburger-react'
+import { useContext, useState } from 'react'
 import {
   AiFillBuild,
   AiFillContacts,
   AiFillHome,
   AiFillInfoCircle,
   AiFillProject
-} from 'react-icons/ai';
-import { HiMoon } from 'react-icons/hi';
-import { CgSun } from 'react-icons/cg';
-import { AppContext } from '../../context/AppContextProvider';
-import './Navbar.scss';
+} from 'react-icons/ai'
+import { HiMoon } from 'react-icons/hi'
+import { CgSun } from 'react-icons/cg'
+import { AppContext } from '../../context/AppContextProvider'
+import './Navbar.scss'
 
 const sections = [
   {
@@ -34,19 +34,19 @@ const sections = [
     name: 'contact',
     icon: <AiFillContacts />
   }
-];
+]
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const { inputRef, theme, onChangeTheme } = useContext(AppContext);
+  const [open, setOpen] = useState(false)
+  const { inputRef, theme, onChangeTheme } = useContext(AppContext)
 
   const focusInput = item => {
     if (item === 'contact') {
       setTimeout(() => {
-        inputRef.current.focus();
-      }, 0);
+        inputRef.current.focus()
+      }, 0)
     }
-  };
+  }
 
   return (
     <>
@@ -65,11 +65,13 @@ const Navbar = () => {
           ))}
         </ul>
         <div className='app__navbar-theme' onClick={onChangeTheme}>
-          {theme === 'dark' ? (
+          {theme === 'dark'
+            ? (
             <CgSun color='white' size={25} />
-          ) : (
+              )
+            : (
             <HiMoon color='white' size={25} />
-          )}
+              )}
         </div>
 
         {/* Mobile menu */}
@@ -95,8 +97,8 @@ const Navbar = () => {
                   <a
                     href={`#${section.name}`}
                     onClick={() => {
-                      setOpen(false);
-                      focusInput(section.name);
+                      setOpen(false)
+                      focusInput(section.name)
                     }}>
                     <div>{section.icon}</div>
                     <div>{section.name}</div>
@@ -108,7 +110,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
