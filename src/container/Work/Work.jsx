@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Project } from '../../components/index'
 import { SectionWrap } from '../../wrapper'
+import { fetchWorks } from '../../api/sanityClient'
 import './Work.scss'
-import { fetchWorks } from '../../api/Work'
 
 const Work = () => {
   const [works, setWorks] = useState([])
