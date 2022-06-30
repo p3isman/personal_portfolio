@@ -1,14 +1,16 @@
 import AppContext from './context/AppContextProvider'
-import './App.scss'
 import { AppWrapper } from './wrapper'
-import CookieConsent, { Cookies } from 'react-cookie-consent'
+import CookieConsent, {
+  Cookies,
+  getCookieConsentValue
+} from 'react-cookie-consent'
 import ReactGA from 'react-ga'
+import './App.scss'
+import { useEffect } from 'react'
 
 const App = () => {
   const handleAcceptCookie = () => {
-    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID, {
-      debug: true
-    })
+    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID)
   }
 
   const handleDeclineCookie = () => {
@@ -17,11 +19,20 @@ const App = () => {
     Cookies.remove('_god')
   }
 
+  useEffect(() => {
+    if (getCookieConsentValue()) {
+      handleAcceptCookie()
+    }
+  }, [])
+
   return (
     <AppContext>
       <AppWrapper />
       <CookieConsent
         enableDeclineButton
+        containerClasses='cookie-banner'
+        buttonClasses='cookie-banner__button'
+        declineButtonClasses='cookies-banner__button decline'
         location='bottom'
         buttonText='Accept'
         declineButtonText='Decline'
