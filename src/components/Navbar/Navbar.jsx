@@ -40,7 +40,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const { inputRef, theme, onChangeTheme } = useContext(AppContext)
 
-  const focusInput = item => {
+  const focusInput = (item) => {
     if (item === 'contact') {
       setTimeout(() => {
         inputRef.current.focus()
@@ -53,9 +53,8 @@ const Navbar = () => {
       <nav
         className={`app__navbar ${theme === 'dark' ? 'app__navbar-dark' : ''}`}>
         {/* Desktop menu */}
-        <div className='app__navbar-logo'>{/* TODO: logo */}</div>
         <ul className='app__navbar-links'>
-          {['home', 'about', 'work', 'skills', 'contact'].map(item => (
+          {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
             <li
               className='app__flex p-text'
               key={`link-${item}`}
@@ -65,18 +64,23 @@ const Navbar = () => {
           ))}
         </ul>
         <div className='app__navbar-theme' onClick={onChangeTheme}>
-          {theme === 'dark'
-            ? (
+          {theme === 'dark' ? (
             <CgSun color='white' size={25} />
-              )
-            : (
+          ) : (
             <HiMoon color='white' size={25} />
-              )}
+          )}
         </div>
 
         {/* Mobile menu */}
         <div className='app__navbar-mobile'>
           <Hamburger color='white' size={20} toggled={open} toggle={setOpen} />
+        </div>
+        <div className='app__navbar-theme-mobile' onClick={onChangeTheme}>
+          {theme === 'dark' ? (
+            <CgSun color='white' size={25} />
+          ) : (
+            <HiMoon color='white' size={25} />
+          )}
         </div>
       </nav>
       <AnimatePresence>
@@ -88,11 +92,11 @@ const Navbar = () => {
                 : 'app__navbar-mobile-light'
             }`}
             transition={{ duration: 1, ease: 'easeOut' }}
-            initial={{ y: -300, opacity: 0.5 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -300, opacity: 0 }}>
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}>
             <ul>
-              {sections.map(section => (
+              {sections.map((section) => (
                 <li key={section.name}>
                   <a
                     href={`#${section.name}`}
