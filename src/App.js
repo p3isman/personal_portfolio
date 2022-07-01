@@ -4,7 +4,7 @@ import CookieConsent, {
   Cookies,
   getCookieConsentValue
 } from 'react-cookie-consent'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import './App.scss'
 import { useEffect } from 'react'
 
