@@ -3,11 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'standard'
-  ],
+  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'standard'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -15,10 +11,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: [
-    'react'
-  ],
+  plugins: ['react'],
   rules: {
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'multiline-ternary': 0
   }
 }
