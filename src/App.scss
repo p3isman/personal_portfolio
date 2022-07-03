@@ -165,15 +165,19 @@
   height: 3.5rem;
   background-color: var(--secondary-color) !important;
   font-family: var(--font-base);
-  
+
   &__button {
     width: 100px;
     border-radius: 10px !important;
     font-family: var(--font-base);
-    
+
     &:hover {
       background-color: goldenrod !important;
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    height: auto;
   }
 }
 
