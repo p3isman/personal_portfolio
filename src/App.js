@@ -1,9 +1,6 @@
 import AppContext from './context/AppContextProvider'
 import { AppWrapper } from './wrapper'
-import CookieConsent, {
-  Cookies,
-  getCookieConsentValue
-} from 'react-cookie-consent'
+import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent'
 import ReactGA from 'react-ga4'
 import './App.scss'
 import { useEffect } from 'react'
@@ -11,12 +8,6 @@ import { useEffect } from 'react'
 const App = () => {
   const handleAcceptCookie = () => {
     ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID)
-  }
-
-  const handleDeclineCookie = () => {
-    Cookies.remove('_ga')
-    Cookies.remove('_gat')
-    Cookies.remove('_god')
   }
 
   useEffect(() => {
@@ -36,8 +27,7 @@ const App = () => {
         location='bottom'
         buttonText='Accept'
         declineButtonText='Decline'
-        onAccept={handleAcceptCookie}
-        onDecline={handleDeclineCookie}>
+        onAccept={handleAcceptCookie}>
         This website uses cookies to enhance the user experience.
       </CookieConsent>
     </AppContext>
