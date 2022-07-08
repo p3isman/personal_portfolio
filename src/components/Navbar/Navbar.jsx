@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { Twirl as Hamburger } from 'hamburger-react'
 import { useContext, useState } from 'react'
 import {
@@ -12,6 +12,7 @@ import { HiMoon } from 'react-icons/hi'
 import { CgSun } from 'react-icons/cg'
 import { AppContext } from '../../context/AppContextProvider'
 import './Navbar.scss'
+import NavbarMobile from './NavbarMobile'
 
 const sections = [
   {
@@ -85,32 +86,11 @@ const Navbar = () => {
       </nav>
       <AnimatePresence>
         {open && (
-          <motion.div
-            className={`app__navbar-mobile-menu ${
-              theme === 'dark'
-                ? 'app__navbar-mobile-dark'
-                : 'app__navbar-mobile-light'
-            }`}
-            transition={{ duration: 1, ease: 'easeOut' }}
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}>
-            <ul>
-              {sections.map((section) => (
-                <li key={section.name}>
-                  <a
-                    href={`#${section.name}`}
-                    onClick={() => {
-                      setOpen(false)
-                      focusInput(section.name)
-                    }}>
-                    <div>{section.icon}</div>
-                    <div>{section.name}</div>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <NavbarMobile
+            setOpen={setOpen}
+            theme={theme}
+            sections={sections}
+            focusInput={focusInput}></NavbarMobile>
         )}
       </AnimatePresence>
     </>
