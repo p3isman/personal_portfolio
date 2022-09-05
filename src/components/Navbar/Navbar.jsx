@@ -51,8 +51,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className={`app__navbar ${theme === 'dark' ? 'app__navbar-dark' : ''}`}>
+      <nav className='app__navbar'>
         {/* Desktop menu */}
         <ul className='app__navbar-links'>
           {['home', 'about', 'work', 'skills', 'contact'].map((item) => (

@@ -15,6 +15,8 @@
   --card-bg-first: #fef4f5;
   --card-bg-last: #f2f7fb;
   --input-color: rgba(228, 228, 228, 0.404);
+  --navbar-color: rgba(255, 255, 255, 0.8);
+  --navbar-border: rgba(255, 255, 255, 0.18);
 }
 
 .theme-dark {
@@ -28,7 +30,8 @@
   --card-bg-first: #1c1b2e7e;
   --card-bg-last: #1f212e59;
   --input-color: rgb(22, 31, 44);
-
+  --navbar-color: rgba(21, 29, 41, 0.8);
+  --navbar-border: rgba(54, 54, 54, 0.2);
   background-color: rgba(18, 25, 35, 1);
 }
 
