@@ -1,10 +1,10 @@
-import { useContext } from 'react'
-import { AppContext } from '../context/AppContextProvider'
-import { Navbar } from '../components'
-import { About, Footer, Header, Skills, Work } from '../container/index'
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContextProvider';
+import { Navbar } from '../components';
+import { About, Footer, Header, Skills, Work } from '../container/index';
 
 const AppWrapper = () => {
-  const { theme } = useContext(AppContext)
+  const { theme } = useContext(AppContext);
 
   return (
     <div
@@ -18,7 +18,7 @@ const AppWrapper = () => {
       <Skills />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default AppWrapper
+export default AppWrapper;

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import './Navbar.scss'
+import { motion } from 'framer-motion';
+import './Navbar.scss';
 
 const NavbarMobile = ({ setOpen, theme, sections, focusInput }) => {
   return (
@@ -11,29 +11,29 @@ const NavbarMobile = ({ setOpen, theme, sections, focusInput }) => {
       }`}
       transition={{
         duration: 0.7,
-        ease: 'easeOut'
+        ease: 'easeOut',
       }}
       initial={{
-        height: '0'
+        height: '0',
       }}
       animate={{
-        height: '100%'
+        height: '100%',
       }}
       exit={{
-        height: '0'
+        height: '0',
       }}>
       <motion.ul
         transition={{ duration: 0.2 }}
         exit={{
-          opacity: 0
+          opacity: 0,
         }}>
         {sections.map((section) => (
           <li key={section.name}>
             <a
               href={`#${section.name}`}
               onClick={() => {
-                setOpen(false)
-                focusInput(section.name)
+                setOpen(false);
+                focusInput(section.name);
               }}>
               <div>{section.name}</div>
             </a>
@@ -41,7 +41,7 @@ const NavbarMobile = ({ setOpen, theme, sections, focusInput }) => {
         ))}
       </motion.ul>
     </motion.div>
-  )
-}
+  );
+};
 
-export default NavbarMobile
+export default NavbarMobile;

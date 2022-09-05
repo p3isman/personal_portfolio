@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion'
-import { useContext } from 'react'
-import { BsGithub } from 'react-icons/bs'
-import { FcSearch } from 'react-icons/fc'
-import { urlFor } from '../api/sanityClient'
-import '../container/Work/Work.scss'
-import { AppContext } from '../context/AppContextProvider'
+import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { BsGithub } from 'react-icons/bs';
+import { FcSearch } from 'react-icons/fc';
+import { urlFor } from '../api/sanityClient';
+import '../container/Work/Work.scss';
+import { AppContext } from '../context/AppContextProvider';
 
-const Project = props => {
-  const { theme } = useContext(AppContext)
+const Project = (props) => {
+  const { theme } = useContext(AppContext);
 
   return (
     <motion.div className='app__work-item app__flex'>
@@ -19,7 +19,7 @@ const Project = props => {
         <p
           className='p-text'
           style={{
-            marginTop: 10
+            marginTop: 10,
           }}>
           {props.work.description}
         </p>
@@ -43,7 +43,7 @@ const Project = props => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

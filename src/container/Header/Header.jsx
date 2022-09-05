@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import images from '../../constants/images'
-import { SectionWrap } from '../../wrapper'
-import './Header.scss'
+import { motion } from 'framer-motion';
+import images from '../../constants/images';
+import { SectionWrap } from '../../wrapper';
+import './Header.scss';
 
 const variants = {
   scaleVariant: {
@@ -9,18 +9,18 @@ const variants = {
     opacity: [0, 1],
     transition: {
       duration: 1.5,
-      ease: 'easeInOut'
-    }
-  }
-}
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const circles = [
   images.sass,
   images.typescript,
   images.react,
   images.javascript,
-  images.flutter
-]
+  images.flutter,
+];
 
 const Header = () => {
   return (
@@ -74,7 +74,7 @@ const Header = () => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SectionWrap(Header, 'home')
+export default SectionWrap(Header, 'home');

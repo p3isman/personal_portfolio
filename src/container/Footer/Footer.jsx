@@ -1,43 +1,43 @@
-import emailjs from '@emailjs/browser'
-import { useContext, useState } from 'react'
-import { BsGithub, BsLinkedin } from 'react-icons/bs'
-import { SpinnerCircular } from 'spinners-react'
-import images from '../../constants/images'
-import { AppContext } from '../../context/AppContextProvider'
-import { SectionWrap } from '../../wrapper'
-import './Footer.scss'
+import emailjs from '@emailjs/browser';
+import { useContext, useState } from 'react';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { SpinnerCircular } from 'spinners-react';
+import images from '../../constants/images';
+import { AppContext } from '../../context/AppContextProvider';
+import { SectionWrap } from '../../wrapper';
+import './Footer.scss';
 
 const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
-  })
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+    message: '',
+  });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const { inputRef, theme } = useContext(AppContext)
+  const { inputRef, theme } = useContext(AppContext);
 
-  const handleChangeInput = e => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     // Email validation
     const validRegex =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (!formData.email.match(validRegex)) {
-      setError('You did not enter a valid email address.')
-      return
+      setError('You did not enter a valid email address.');
+      return;
     }
 
-    setLoading(true)
-    setError(null)
+    setLoading(true);
+    setError(null);
 
     emailjs
       .send(
@@ -48,22 +48,22 @@ const Footer = () => {
       )
       .then(
         () => {
-          setError(null)
-          setIsFormSubmitted(true)
+          setError(null);
+          setIsFormSubmitted(true);
         },
-        error => {
-          setError(`An error ocurred while sending the message: ${error}`)
-          setIsFormSubmitted(false)
+        (error) => {
+          setError(`An error ocurred while sending the message: ${error}`);
+          setIsFormSubmitted(false);
         }
-      )
+      );
 
-    setLoading(false)
+    setLoading(false);
     setFormData({
       name: '',
       email: '',
-      message: ''
-    })
-  }
+      message: '',
+    });
+  };
 
   return (
     <>
@@ -92,8 +92,7 @@ const Footer = () => {
         </div>
       )}
 
-      {!isFormSubmitted
-        ? (
+      {!isFormSubmitted ? (
         <form className='app__footer-form app__flex' onSubmit={handleSubmit}>
           <div className='app__flex'>
             <input
@@ -128,17 +127,14 @@ const Footer = () => {
             />
           </div>
           <button onClick={handleSubmit}>
-            {loading
-              ? (
+            {loading ? (
               <SpinnerCircular color='white' size='30' />
-                )
-              : (
-                  'Send Message'
-                )}
+            ) : (
+              'Send Message'
+            )}
           </button>
         </form>
-          )
-        : (
+      ) : (
         <div>
           <h4 className='head-text app__footer-message'>
             Your email was sent.
@@ -146,7 +142,7 @@ const Footer = () => {
             Thank you for getting in touch.
           </h4>
         </div>
-          )}
+      )}
 
       <div className='app__footer-social'>
         <a href='https://github.com/p3isman/' target='_blank' rel='noreferrer'>
@@ -167,7 +163,7 @@ const Footer = () => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrap(Footer, 'contact')
+export default SectionWrap(Footer, 'contact');

@@ -1,51 +1,51 @@
-import { motion } from 'framer-motion'
-import images from '../../constants/images'
-import { SectionWrap } from '../../wrapper'
-import './Skills.scss'
+import { motion } from 'framer-motion';
+import images from '../../constants/images';
+import { SectionWrap } from '../../wrapper';
+import './Skills.scss';
 
 const skills = [
   {
     name: 'HTML',
-    icon: images.html
+    icon: images.html,
   },
   {
     name: 'CSS',
 
-    icon: images.css
+    icon: images.css,
   },
   {
     name: 'SASS',
-    icon: images.sass
+    icon: images.sass,
   },
   {
     name: 'JavaScript',
-    icon: images.javascript
+    icon: images.javascript,
   },
   {
     name: 'TypeScript',
-    icon: images.typescript
+    icon: images.typescript,
   },
   {
     name: 'NodeJS',
-    icon: images.node
+    icon: images.node,
   },
   {
     name: 'Flutter',
-    icon: images.flutter
+    icon: images.flutter,
   },
   {
     name: 'React',
-    icon: images.react
+    icon: images.react,
   },
   {
     name: 'Redux',
-    icon: images.redux
+    icon: images.redux,
   },
   {
     name: 'Git',
-    icon: images.git
-  }
-]
+    icon: images.git,
+  },
+];
 
 const Skills = () => {
   return (
@@ -55,7 +55,7 @@ const Skills = () => {
       </h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
-          {skills.map(skill => (
+          {skills.map((skill) => (
             <motion.div
               animate={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
@@ -72,7 +72,7 @@ const Skills = () => {
         </motion.div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrap(Skills, 'skills')
+export default SectionWrap(Skills, 'skills');

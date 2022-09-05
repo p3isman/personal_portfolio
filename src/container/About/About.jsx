@@ -1,17 +1,17 @@
-import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { fetchAbouts, urlFor } from '../../api/sanityClient'
-import { SectionWrap } from '../../wrapper'
-import './About.scss'
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { fetchAbouts, urlFor } from '../../api/sanityClient';
+import { SectionWrap } from '../../wrapper';
+import './About.scss';
 
 const About = () => {
-  const [abouts, setAbouts] = useState([])
+  const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
     fetchAbouts().then((data) => {
-      setAbouts(data)
-    })
-  }, [])
+      setAbouts(data);
+    });
+  }, []);
 
   return (
     <div>
@@ -48,7 +48,7 @@ const About = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SectionWrap(About, 'about')
+export default SectionWrap(About, 'about');

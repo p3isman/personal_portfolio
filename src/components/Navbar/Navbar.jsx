@@ -1,53 +1,53 @@
-import { AnimatePresence } from 'framer-motion'
-import { Twirl as Hamburger } from 'hamburger-react'
-import { useContext, useState } from 'react'
+import { AnimatePresence } from 'framer-motion';
+import { Twirl as Hamburger } from 'hamburger-react';
+import { useContext, useState } from 'react';
 import {
   AiFillBuild,
   AiFillContacts,
   AiFillHome,
   AiFillInfoCircle,
-  AiFillProject
-} from 'react-icons/ai'
-import { HiMoon } from 'react-icons/hi'
-import { CgSun } from 'react-icons/cg'
-import { AppContext } from '../../context/AppContextProvider'
-import './Navbar.scss'
-import NavbarMobile from './NavbarMobile'
+  AiFillProject,
+} from 'react-icons/ai';
+import { HiMoon } from 'react-icons/hi';
+import { CgSun } from 'react-icons/cg';
+import { AppContext } from '../../context/AppContextProvider';
+import './Navbar.scss';
+import NavbarMobile from './NavbarMobile';
 
 const sections = [
   {
     name: 'home',
-    icon: <AiFillHome />
+    icon: <AiFillHome />,
   },
   {
     name: 'about',
-    icon: <AiFillInfoCircle />
+    icon: <AiFillInfoCircle />,
   },
   {
     name: 'work',
-    icon: <AiFillProject />
+    icon: <AiFillProject />,
   },
   {
     name: 'skills',
-    icon: <AiFillBuild />
+    icon: <AiFillBuild />,
   },
   {
     name: 'contact',
-    icon: <AiFillContacts />
-  }
-]
+    icon: <AiFillContacts />,
+  },
+];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
-  const { inputRef, theme, onChangeTheme } = useContext(AppContext)
+  const [open, setOpen] = useState(false);
+  const { inputRef, theme, onChangeTheme } = useContext(AppContext);
 
   const focusInput = (item) => {
     if (item === 'contact') {
       setTimeout(() => {
-        inputRef.current.focus()
-      }, 0)
+        inputRef.current.focus();
+      }, 0);
     }
-  }
+  };
 
   return (
     <>
@@ -94,7 +94,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
