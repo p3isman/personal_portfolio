@@ -6,9 +6,9 @@
   align-items: center;
 
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--navbar-color);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--navbar-border);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 10;
@@ -20,11 +20,6 @@
   @media screen and (max-width: 900px) {
     height: 64px;
   }
-}
-
-.app__navbar-dark {
-  background-color: rgba(21, 29, 41, 0.8);
-  border: 1px solid rgba(54, 54, 54, 0.2);
 }
 
 .app__navbar-theme {
@@ -187,6 +182,7 @@
 .app__navbar-mobile-light {
   background: url('../../assets/bgIMG-light.webp');
 }
+
 .app__navbar-mobile-dark {
   background: url('../../assets/bgIMG-dark.webp');
 }
