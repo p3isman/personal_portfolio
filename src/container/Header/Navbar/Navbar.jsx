@@ -10,7 +10,7 @@ import {
 } from 'react-icons/ai';
 import { HiMoon } from 'react-icons/hi';
 import { CgSun } from 'react-icons/cg';
-import { AppContext } from '../../context/AppContextProvider';
+import { AppContext } from 'context/AppContextProvider';
 import './Navbar.scss';
 import NavbarMobile from './NavbarMobile';
 
