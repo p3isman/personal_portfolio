@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Project } from '../../components/index';
+import Project from './Project';
 import { SectionWrap } from '../../wrapper';
-import { fetchWorks } from '../../api/sanityClient';
+import { client } from '../../api/sanityClient';
 import './Work.scss';
 
 const Work = () => {
@@ -15,7 +15,9 @@ const Work = () => {
   });
 
   useEffect(() => {
-    fetchWorks().then((data) => {
+    const query = '*[_type=="works"] | order(order asc)';
+
+    client.fetch(query).then((data) => {
       setWorks(data);
       setFilterWork(data);
     });

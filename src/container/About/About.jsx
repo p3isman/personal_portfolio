@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { fetchAbouts, urlFor } from '../../api/sanityClient';
+import { client, urlFor } from '../../api/sanityClient';
 import { SectionWrap } from '../../wrapper';
 import './About.scss';
 
@@ -8,7 +8,9 @@ const About = () => {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
-    fetchAbouts().then((data) => {
+    const query = '*[_type=="abouts"]';
+
+    client.fetch(query).then((data) => {
       setAbouts(data);
     });
   }, []);

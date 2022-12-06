@@ -11,17 +11,3 @@ export const client = sanityClient({
 const builder = imageUrlBuilder(client);
 
 export const urlFor = (source) => builder.image(source);
-
-export const fetchAbouts = async () => {
-  const query = '*[_type=="abouts"]';
-
-  const data = await client.fetch(query);
-  return data;
-};
-
-export const fetchWorks = async () => {
-  const query = '*[_type=="works"] | order(order asc)';
-
-  const data = await client.fetch(query);
-  return data;
-};
