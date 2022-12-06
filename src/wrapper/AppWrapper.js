@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContextProvider';
-import { Navbar } from '../components';
+import Navbar from '../container/Header/Navbar/Navbar';
 import { About, Footer, Header, Skills, Work } from '../container/index';
 
 const AppWrapper = () => {
