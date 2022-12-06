@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    // This allows to use absolute paths for imports
+    "baseUrl": "src"
+  }
+}
