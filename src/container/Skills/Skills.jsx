@@ -15,10 +15,6 @@ const Skills = () => {
     });
   }, []);
 
-  if (skills.length > 0) {
-    skills.forEach((skill) => console.log(skill.icon));
-  }
-
   return (
     <>
       <h2 className='head-text'>
