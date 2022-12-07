@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent';
 import ReactGA from 'react-ga4';
-import AppContext from './context/AppContextProvider';
-import { AppWrapper } from './wrapper';
+import AppContext from 'context/AppContextProvider';
+import { AppWrapper } from 'wrapper';
 import './App.scss';
 
 const App = () => {

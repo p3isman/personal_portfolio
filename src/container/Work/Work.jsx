@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Project from './Project';
-import { SectionWrap } from '../../wrapper';
-import { client } from '../../api/sanityClient';
+import { SectionWrap } from 'wrapper';
+import { client } from 'api/sanityClient';
 import './Work.scss';
 
 const Work = () => {

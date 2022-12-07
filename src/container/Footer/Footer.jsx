@@ -2,9 +2,9 @@ import emailjs from '@emailjs/browser';
 import { useContext, useState } from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { SpinnerCircular } from 'spinners-react';
-import images from '../../constants/images';
-import { AppContext } from '../../context/AppContextProvider';
-import { SectionWrap } from '../../wrapper';
+import images from 'constants/images';
+import { AppContext } from 'context/AppContextProvider';
+import { SectionWrap } from 'wrapper';
 import './Footer.scss';
 
 const Footer = () => {

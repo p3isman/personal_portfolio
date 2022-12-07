@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FcSearch } from 'react-icons/fc';
-import { urlFor } from '../../api/sanityClient';
-import { AppContext } from '../../context/AppContextProvider';
+import { urlFor } from 'api/sanityClient';
+import { AppContext } from 'context/AppContextProvider';
 import './Work.scss';
 
 const Project = ({ work }) => {

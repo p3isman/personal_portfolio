@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import images from '../../constants/images';
-import { SectionWrap } from '../../wrapper';
+import images from 'constants/images';
+import { SectionWrap } from 'wrapper';
 import './Header.scss';
 
 const variants = {

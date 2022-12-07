@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { client, urlFor } from '../../api/sanityClient';
-import { SectionWrap } from '../../wrapper';
+import { client, urlFor } from 'api/sanityClient';
+import { SectionWrap } from 'wrapper';
 import './Skills.scss';
 
 const Skills = () => {

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { client, urlFor } from '../../api/sanityClient';
-import { SectionWrap } from '../../wrapper';
+import { client, urlFor } from 'api/sanityClient';
+import { SectionWrap } from 'wrapper';
 import './About.scss';
 
 const About = () => {
