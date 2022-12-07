@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import './Navbar.scss';
 
-const NavbarMobile = ({ setOpen, theme, sections, focusInput }) => {
+const NavbarMobile = ({ setOpen, theme, sections }) => {
   return (
     <motion.div
       className={`app__navbar-mobile-menu ${
@@ -33,7 +33,6 @@ const NavbarMobile = ({ setOpen, theme, sections, focusInput }) => {
               href={`#${section.name}`}
               onClick={() => {
                 setOpen(false);
-                focusInput(section.name);
               }}>
               <div>{section.name}</div>
             </a>

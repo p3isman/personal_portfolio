@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { AppContext } from 'context/AppContextProvider';
+import { ThemeContext } from 'context/ThemeProvider';
 import Navbar from 'container/Header/Navbar/Navbar';
 import { About, Footer, Header, Skills, Work } from 'container/index';
 
 const AppWrapper = () => {
-  const { theme } = useContext(AppContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div

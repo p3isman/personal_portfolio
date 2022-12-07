@@ -10,7 +10,7 @@ import {
 } from 'react-icons/ai';
 import { HiMoon } from 'react-icons/hi';
 import { CgSun } from 'react-icons/cg';
-import { AppContext } from 'context/AppContextProvider';
+import { ThemeContext } from 'context/ThemeProvider';
 import './Navbar.scss';
 import NavbarMobile from './NavbarMobile';
 
@@ -39,31 +39,22 @@ const sections = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { inputRef, theme, onChangeTheme } = useContext(AppContext);
-
-  const focusInput = (item) => {
-    if (item === 'contact') {
-      setTimeout(() => {
-        inputRef.current.focus();
-      }, 0);
-    }
-  };
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <>
       <nav className='app__navbar'>
-        {/* Desktop menu */}
+        {/* Desktop navbar */}
         <ul className='app__navbar-links'>
           {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-            <li
-              className='app__flex p-text'
-              key={`link-${item}`}
-              onClick={() => focusInput(item)}>
+            <li className='app__flex p-text' key={`link-${item}`}>
               <a href={`#${item}`}>{item}</a>
             </li>
           ))}
         </ul>
-        <div className='app__navbar-theme' onClick={onChangeTheme}>
+        <div
+          className='app__navbar-theme'
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
             <CgSun color='white' size={25} />
           ) : (
@@ -71,11 +62,13 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile navbar */}
         <div className='app__navbar-mobile'>
           <Hamburger color='white' size={20} toggled={open} toggle={setOpen} />
         </div>
-        <div className='app__navbar-theme-mobile' onClick={onChangeTheme}>
+        <div
+          className='app__navbar-theme-mobile'
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
             <CgSun color='white' size={25} />
           ) : (
@@ -83,13 +76,14 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <NavbarMobile
             setOpen={setOpen}
             theme={theme}
-            sections={sections}
-            focusInput={focusInput}></NavbarMobile>
+            sections={sections}></NavbarMobile>
         )}
       </AnimatePresence>
     </>

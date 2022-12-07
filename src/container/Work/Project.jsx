@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { FcSearch } from 'react-icons/fc';
 import { urlFor } from 'api/sanityClient';
-import { AppContext } from 'context/AppContextProvider';
+import { ThemeContext } from 'context/ThemeProvider';
 import './Work.scss';
 
 const Project = ({ work }) => {
-  const { theme } = useContext(AppContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <motion.div className='app__work-item app__flex'>

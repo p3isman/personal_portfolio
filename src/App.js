@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import CookieConsent, { getCookieConsentValue } from 'react-cookie-consent';
 import ReactGA from 'react-ga4';
-import AppContext from 'context/AppContextProvider';
+import ThemeProvider from 'context/ThemeProvider';
 import { AppWrapper } from 'wrapper';
 import './App.scss';
 
@@ -17,7 +17,7 @@ const App = () => {
   }, []);
 
   return (
-    <AppContext>
+    <ThemeProvider>
       <AppWrapper />
       <CookieConsent
         enableDeclineButton
@@ -30,7 +30,7 @@ const App = () => {
         onAccept={handleAcceptCookie}>
         This website uses cookies to enhance the user experience.
       </CookieConsent>
-    </AppContext>
+    </ThemeProvider>
   );
 };
 

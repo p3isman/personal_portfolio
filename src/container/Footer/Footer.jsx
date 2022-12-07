@@ -1,9 +1,8 @@
 import emailjs from '@emailjs/browser';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { SpinnerCircular } from 'spinners-react';
 import images from 'constants/images';
-import { AppContext } from 'context/AppContextProvider';
 import { SectionWrap } from 'wrapper';
 import './Footer.scss';
 
@@ -16,8 +15,6 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  const { inputRef, theme } = useContext(AppContext);
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -96,7 +93,6 @@ const Footer = () => {
         <form className='app__footer-form app__flex' onSubmit={handleSubmit}>
           <div className='app__flex'>
             <input
-              ref={inputRef}
               className='p-text'
               type='text'
               placeholder='Your Name'
@@ -146,7 +142,7 @@ const Footer = () => {
 
       <div className='app__footer-social'>
         <a href='https://github.com/p3isman/' target='_blank' rel='noreferrer'>
-          <BsGithub size={30} color={theme === 'dark' ? 'white' : '#171515'} />
+          <BsGithub size={30} className='icon-color' />
         </a>
         <a
           href='https://www.linkedin.com/in/pedroeisman/'
