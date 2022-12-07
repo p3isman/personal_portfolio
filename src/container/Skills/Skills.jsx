@@ -1,53 +1,24 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import images from '../../constants/images';
+import { client, urlFor } from '../../api/sanityClient';
 import { SectionWrap } from '../../wrapper';
 import './Skills.scss';
 
-const skills = [
-  {
-    name: 'HTML',
-    icon: images.html,
-  },
-  {
-    name: 'CSS',
-
-    icon: images.css,
-  },
-  {
-    name: 'SASS',
-    icon: images.sass,
-  },
-  {
-    name: 'JavaScript',
-    icon: images.javascript,
-  },
-  {
-    name: 'TypeScript',
-    icon: images.typescript,
-  },
-  {
-    name: 'NodeJS',
-    icon: images.node,
-  },
-  {
-    name: 'Flutter',
-    icon: images.flutter,
-  },
-  {
-    name: 'React',
-    icon: images.react,
-  },
-  {
-    name: 'Redux',
-    icon: images.redux,
-  },
-  {
-    name: 'Git',
-    icon: images.git,
-  },
-];
-
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "skills"]';
+
+    client.fetch(query).then((data) => {
+      setSkills(data);
+    });
+  }, []);
+
+  if (skills.length > 0) {
+    skills.forEach((skill) => console.log(skill.icon));
+  }
+
   return (
     <>
       <h2 className='head-text'>
@@ -64,7 +35,7 @@ const Skills = () => {
               <div
                 className='app__flex'
                 style={{ backgroundColor: skill.bgColor ?? 'white' }}>
-                <img src={skill.icon} alt={skill.name} />
+                <img src={urlFor(skill.icon).url()} alt={skill.name} />
               </div>
               <p className='p-text'>{skill.name}</p>
             </motion.div>
