@@ -36,7 +36,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 25px #fef4f5;
+      box-shadow: 0 0 10px #fef4f5;
     }
 
     @media screen and (max-width: 450px) {
@@ -49,11 +49,8 @@
   }
 }
 
-.app__footer-cards .app__footer-card:first-child {
-  background-color: var(--card-bg-first);
-}
-.app__footer-cards .app__footer-card:last-child {
-  background-color: var(--card-bg-last);
+.app__footer-cards .app__footer-card {
+  background-color: var(--card-bg-color);
 }
 
 .app__footer-form {
@@ -156,5 +153,9 @@
     &:hover {
       transform: scale(1.2);
     }
+  }
+
+  &--icon {
+    color: var(--icon-color);
   }
 }

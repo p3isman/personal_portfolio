@@ -142,7 +142,7 @@ const Footer = () => {
 
       <div className='app__footer-social'>
         <a href='https://github.com/p3isman/' target='_blank' rel='noreferrer'>
-          <BsGithub size={30} className='icon-color' />
+          <BsGithub size={30} className='app__footer-social--icon' />
         </a>
         <a
           href='https://www.linkedin.com/in/pedroeisman/'

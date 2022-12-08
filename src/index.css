@@ -10,13 +10,13 @@
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
   --brown-color: #46364a;
-  --bg-color: #ffffff;
+  --bg-color: #fff;
+  --card-bg-color: rgba(255, 255, 255, 0.6);
   --shadow: #ddd;
-  --card-bg-first: #fef4f5;
-  --card-bg-last: #f2f7fb;
   --input-color: rgba(228, 228, 228, 0.404);
   --navbar-color: rgba(255, 255, 255, 0.8);
   --navbar-border: rgba(255, 255, 255, 0.18);
+  --icon-color: #171515;
 }
 
 .theme-dark {
@@ -25,14 +25,13 @@
   --lightGray-color: #2d2647;
   --gray-color: #9ca3af;
   --brown-color: #46364a;
-  --bg-color: rgb(22, 31, 44);
+  --bg-color: rgba(21, 29, 41);
+  --card-bg-color: rgba(15, 20, 31, 0.74);
   --shadow: rgba(18, 18, 29, 0.397);
-  --card-bg-first: #1c1b2e7e;
-  --card-bg-last: #1f212e59;
   --input-color: rgb(22, 31, 44);
   --navbar-color: rgba(21, 29, 41, 0.8);
   --navbar-border: rgba(54, 54, 54, 0.2);
-  background-color: rgba(18, 25, 35, 1);
+  --icon-color: #fff;
 }
 
 * {
@@ -42,5 +41,5 @@
   scroll-behavior: smooth;
   overscroll-behavior: none;
   transition-property: color, background-color, border, box-shadow;
-  transition-duration: 1s;
+  transition-duration: 0.3s;
 }
