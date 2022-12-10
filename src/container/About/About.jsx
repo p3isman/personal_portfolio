@@ -26,7 +26,7 @@ const About = () => {
         Hello and welcome to my portfolio. I am Pedro, a software developer with
         a focus on web and mobile technologies. I really enjoy building
         applications and applying technology to create and improve solutions.
-        While I&apos;ve expent most of my time building applications with React
+        While I&apos;ve spent most of my time building applications with React
         and Flutter, I enjoy learning new technologies, and pushing myself to
         new fields of knowledge. I also understand the importance of good
         presentation and design, as well as the importance of delivering quality
