@@ -45,7 +45,7 @@ const Navbar = () => {
     <>
       <nav className='app__navbar'>
         {/* Desktop navbar */}
-        <ul className='app__navbar-links'>
+        <ul className='app__navbar__links'>
           {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
             <li className='app__flex p-text' key={`link-${item}`}>
               <a href={`#${item}`}>{item}</a>
@@ -53,7 +53,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div
-          className='app__navbar-theme'
+          className='app__navbar__theme'
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
             <CgSun color='white' size={20} />
@@ -63,6 +63,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile navbar */}
+        <div className='app__navbar--mobile'>
           <Hamburger
             color={theme === 'dark' ? 'white' : '#333'}
             size={18}
@@ -71,7 +72,7 @@ const Navbar = () => {
           />
         </div>
         <div
-          className='app__navbar-theme-mobile'
+          className='app__navbar__theme--mobile'
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
             <CgSun color='white' size={20} />

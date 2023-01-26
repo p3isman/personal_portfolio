@@ -4,7 +4,7 @@ import './Navbar.scss';
 const NavbarMobile = ({ setOpen, theme, sections }) => {
   return (
     <motion.div
-      className={`app__navbar-mobile-menu ${
+      className={`app__navbar--mobile__menu ${
         theme === 'dark'
           ? 'app__navbar-mobile-dark'
           : 'app__navbar-mobile-light'
