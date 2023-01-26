@@ -8,7 +8,7 @@ import {
   AiFillInfoCircle,
   AiFillProject,
 } from 'react-icons/ai';
-import { HiMoon } from 'react-icons/hi';
+import { MdOutlineDarkMode } from 'react-icons/md';
 import { CgSun } from 'react-icons/cg';
 import { ThemeContext } from 'context/ThemeProvider';
 import './Navbar.scss';
@@ -56,23 +56,27 @@ const Navbar = () => {
           className='app__navbar-theme'
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
-            <CgSun color='white' size={25} />
+            <CgSun color='white' size={20} />
           ) : (
-            <HiMoon color='white' size={25} />
+            <MdOutlineDarkMode color='#333' size={20} />
           )}
         </div>
 
         {/* Mobile navbar */}
-        <div className='app__navbar-mobile'>
-          <Hamburger color='white' size={20} toggled={open} toggle={setOpen} />
+          <Hamburger
+            color={theme === 'dark' ? 'white' : '#333'}
+            size={18}
+            toggled={open}
+            toggle={setOpen}
+          />
         </div>
         <div
           className='app__navbar-theme-mobile'
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? (
-            <CgSun color='white' size={25} />
+            <CgSun color='white' size={20} />
           ) : (
-            <HiMoon color='white' size={25} />
+            <MdOutlineDarkMode color='#333' size={20} />
           )}
         </div>
       </nav>
